@@ -8,6 +8,8 @@ import Fade from '@material-ui/core/Fade';
 
 import { Instagram, Soundcloud } from 'mdi-material-ui';
 
+import ContextCard from '../ContextCard/ContextCard';
+
 export default function Home() {
   const [fadeOn, setFadeOn] = useState(false);
 
@@ -40,13 +42,32 @@ export default function Home() {
         </Box>
       </Typography>
       <Fade in={fadeOn} timeout={5000}>
-        <Box display="flex" justifyContent="center">
-          <IconButton href="https://soundcloud.com/jyillamusic">
-            <Soundcloud />
-          </IconButton>
-          <IconButton href="https://www.instagram.com/justinyum98/">
-            <Instagram />
-          </IconButton>
+        <Box>
+          <Box display="flex" justifyContent="center">
+            <IconButton href="https://soundcloud.com/justin-yum">
+              <Soundcloud />
+            </IconButton>
+            <IconButton href="https://www.instagram.com/justinyum98/">
+              <Instagram />
+            </IconButton>
+          </Box>
+          <Box display="flex" justifyContent="center" mt={8}>
+            <ContextCard
+              mainText="About Me"
+              buttonText="Learn More"
+              route="/about"
+            />
+            <ContextCard
+              mainText="My Music"
+              buttonText="Click Me"
+              route="/music"
+            />
+            <ContextCard
+              mainText="Contact Me"
+              buttonText="Click Me"
+              route="/contact"
+            />
+          </Box>
         </Box>
       </Fade>
     </div>

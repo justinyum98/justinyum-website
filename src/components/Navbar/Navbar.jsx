@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     flexShrink: 0,
     color: 'black',
+    '&:hover': {
+      background: '#d8d8d8',
+      borderRadius: 10,
+    },
   },
 }));
 
@@ -37,6 +41,8 @@ export default function Navbar() {
         <Link
           component={RouteLink}
           to="/"
+          variant="button"
+          underline="none"
           className={classes.link}
         >
           Home
@@ -44,6 +50,8 @@ export default function Navbar() {
         <Link
           component={RouteLink}
           to="/about"
+          variant="button"
+          underline="none"
           className={classes.link}
         >
           About
@@ -51,6 +59,8 @@ export default function Navbar() {
         <Link
           component={RouteLink}
           to="/music"
+          variant="button"
+          underline="none"
           className={classes.link}
         >
           Music
@@ -58,6 +68,8 @@ export default function Navbar() {
         <Link
           component={RouteLink}
           to="/posts"
+          variant="button"
+          underline="none"
           className={classes.link}
         >
           Posts
@@ -65,6 +77,8 @@ export default function Navbar() {
         <Link
           component={RouteLink}
           to="/contact"
+          variant="button"
+          underline="none"
           className={classes.link}
         >
           Contact
