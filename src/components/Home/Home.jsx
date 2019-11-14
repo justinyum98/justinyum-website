@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Fade from '@material-ui/core/Fade';
 
-import { Instagram, Soundcloud } from 'mdi-material-ui';
+import { Instagram, Soundcloud, GithubCircle } from 'mdi-material-ui';
 
 export default function Home() {
   const [fadeOn, setFadeOn] = useState(false);
@@ -52,6 +52,9 @@ export default function Home() {
         </Grid>
         <Fade in={fadeOn} timeout={5000}>
           <Grid item xs={12}>
+            <IconButton href="https://github.com/justinyum98">
+              <GithubCircle />
+            </IconButton>
             <IconButton href="https://soundcloud.com/justin-yum">
               <Soundcloud />
             </IconButton>

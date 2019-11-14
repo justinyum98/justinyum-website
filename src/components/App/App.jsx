@@ -9,6 +9,7 @@ import Layout from '../Layout/Layout';
 import Navbar from '../Navbar/Navbar';
 import Home from '../Home/Home';
 import About from '../About/About';
+import Music from '../Music/Music';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             <About />
           </Route>
           <Route path="/music">
-            Music component here
+            <Music />
           </Route>
           <Route path="/posts">
             Posts component here
