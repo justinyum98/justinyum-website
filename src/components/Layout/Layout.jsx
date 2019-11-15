@@ -10,7 +10,7 @@ import Container from '@material-ui/core/Container';
 import theme from '../../theme';
 
 const client = new ApolloClient({
-  uri: 'put uri here',
+  uri: 'https://vast-anchorage-25029.herokuapp.com/',
 });
 
 function Layout({ children }) {
