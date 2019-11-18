@@ -9,11 +9,13 @@ import InstaPost from '../InstaPost/InstaPost';
 const INSTA_POSTS = gql`
   {
     posts {
-      id,
-      mediaType,
-      mediaUrl,
-      likeCount,
-      caption,
+      id
+      username
+      mediaType
+      mediaUrl
+      likeCount
+      caption
+      commentsCount
       permalink
     }
   }
@@ -35,7 +37,7 @@ function InstaPostsWrapper() {
     >
       {data.posts.map((post) => (
         <Grid item xs={12} sm={12} md={6}>
-          <InstaPost post={post} />
+          <InstaPost key={post.id} post={post} />
         </Grid>
       ))}
     </Grid>

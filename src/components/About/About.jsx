@@ -42,7 +42,7 @@ export default function About() {
             <Typography variant="body1" align="center" gutterBottom>
               My passion is expressing myself creatively
               <br />
-              in coding and music production, which are
+              through coding and music production, which are
               <br />
               two enjoyable pastimes of mine.
             </Typography>

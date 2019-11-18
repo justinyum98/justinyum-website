@@ -10,6 +10,7 @@ import Navbar from '../Navbar/Navbar';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Music from '../Music/Music';
+import Posts from '../Posts/Posts';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <Music />
           </Route>
           <Route path="/posts">
-            Posts component here
+            <Posts />
           </Route>
           <Route path="/contact">
             Contact component here

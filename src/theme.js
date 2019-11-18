@@ -17,7 +17,7 @@ const theme = responsiveFontSizes(
       },
       background: {
         default: '#ebe2d4',
-        paper: '#c0b8ad',
+        paper: '#fcfcfc',
       },
     },
     typography: {

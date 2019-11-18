@@ -1,17 +1,19 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core/styles';
-
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
 
 import { FavoriteOutlined } from '@material-ui/icons';
-import { Instagram } from 'mdi-material-ui';
+import { Instagram, CommentMultipleOutline } from 'mdi-material-ui';
 
 const useStyles = makeStyles(() => ({
   card: {
@@ -20,17 +22,30 @@ const useStyles = makeStyles(() => ({
   },
   media: {
     width: 600,
-    height: 600,
+  },
+  likeIcon: {
+    marginRight: 10,
+  },
+  commentsIcon: {
+    marginLeft: 10,
+    marginRight: 10,
   },
 }));
 
-function InstaPost({
-  id, mediaType, mediaUrl, likeCount, caption, permalink,
-}) {
+function InstaPost({ post }) {
+  const {
+    id, username, mediaType, mediaUrl, likeCount, caption, commentsCount, permalink,
+  } = post;
   const classes = useStyles();
 
   return (
     <Card id={id} className={classes.card}>
+      <CardHeader
+        avatar={
+          <Avatar>JY</Avatar>
+        }
+        title={username}
+      />
       { mediaType === 'IMAGE' ? (
         <CardMedia
           className={classes.media}
@@ -39,18 +54,18 @@ function InstaPost({
           image={mediaUrl}
         />
       ) : (
-        <CardMedia
-          className={classes.media}
-          component="iframe"
-          image={mediaUrl}
-        />
+        <video className={classes.media} controls>
+          <source src={mediaUrl} type="video/mp4" />
+        </video>
       )}
       <CardContent>
-        <Typography component="h2" variant="h5" gutterBottom>
-          <FavoriteOutlined />
-          {likeCount}
+        <Typography variant="h6" gutterBottom>
+          <FavoriteOutlined className={classes.likeIcon} />
+          { likeCount }
+          <CommentMultipleOutline className={classes.commentsIcon} />
+          { commentsCount }
         </Typography>
-        <Typography component="p" variant="body2">
+        <Typography variant="body1">
           {caption}
         </Typography>
       </CardContent>
@@ -64,21 +79,20 @@ function InstaPost({
 }
 
 InstaPost.propTypes = {
-  id: PropTypes.string,
-  mediaType: PropTypes.string,
-  mediaUrl: PropTypes.string,
-  likeCount: PropTypes.number,
-  caption: PropTypes.string,
-  permalink: PropTypes.string,
+  post: PropTypes.shape({
+    id: PropTypes.string,
+    username: PropTypes.string,
+    mediaType: PropTypes.string,
+    mediaUrl: PropTypes.string,
+    likeCount: PropTypes.number,
+    caption: PropTypes.string,
+    commentsCount: PropTypes.number,
+    permalink: PropTypes.string,
+  }),
 };
 
 InstaPost.defaultProps = {
-  id: '',
-  mediaType: '',
-  mediaUrl: '',
-  likeCount: 0,
-  caption: '',
-  permalink: '',
+  post: null,
 };
 
 export default InstaPost;
