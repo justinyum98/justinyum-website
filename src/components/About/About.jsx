@@ -5,11 +5,18 @@ import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 
+import ProjectsWrapper from '../ProjectsWrapper/ProjectsWrapper';
+
 const useStyles = makeStyles({
   avatar: {
     margin: 10,
     width: 150,
     height: 150,
+  },
+  gridContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
 });
 
@@ -18,8 +25,8 @@ export default function About() {
 
   return (
     <div>
-      <Grid container direction="column" justify="flex-start" alignItems="center">
-        <Grid container item xs={12}>
+      <Grid container className={classes.gridContainer}>
+        <Grid container item xs={12} className={classes.gridContainer}>
           <Grid item xs={12}>
             <Typography variant="body1" gutterBottom>
               Hello, my name is
@@ -48,12 +55,13 @@ export default function About() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container item xs={12}>
+        <Grid container item xs={12} className={classes.gridContainer}>
           <Grid item xs={12}>
             <Typography variant="h3" gutterBottom>
               Projects
             </Typography>
           </Grid>
+          <ProjectsWrapper />
         </Grid>
       </Grid>
     </div>
