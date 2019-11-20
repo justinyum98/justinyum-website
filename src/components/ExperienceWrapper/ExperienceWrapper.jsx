@@ -5,23 +5,22 @@ import { gql } from 'apollo-boost';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import Project from '../Project/Project';
+import Experience from '../Experience/Experience';
 
-const PROJECTS = gql`
+const EXPERIENCE = gql`
   {
-    projects {
-      name
+    experience {
+      companyName
       role
       imageUrl
       date
       description
-      repoUrl
     }
   }
 `;
 
-function ProjectsWrapper() {
-  const { loading, error, data } = useQuery(PROJECTS);
+function ExperienceWrapper() {
+  const { loading, error, data } = useQuery(EXPERIENCE);
 
   if (loading) return <p>Loading</p>;
   if (error) return <p>Error</p>;
@@ -30,7 +29,7 @@ function ProjectsWrapper() {
     <Grid container item xs={12} direction="column" alignItems="center">
       <Grid item xs={12}>
         <Typography variant="h3" gutterBottom>
-            Projects
+          Experience
         </Typography>
       </Grid>
       <Grid
@@ -38,12 +37,12 @@ function ProjectsWrapper() {
         direction="column"
         alignItems="center"
       >
-        {data.projects.map((project) => (
-          <Project project={project} />
+        {data.experience.map((experience) => (
+          <Experience experience={experience} />
         ))}
       </Grid>
     </Grid>
   );
 }
 
-export default ProjectsWrapper;
+export default ExperienceWrapper;

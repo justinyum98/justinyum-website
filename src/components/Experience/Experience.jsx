@@ -4,12 +4,9 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-
-import { GithubCircle } from 'mdi-material-ui';
 
 const useStyles = makeStyles(() => ({
-  projectContainer: {
+  experienceContainer: {
     flexDirection: 'column',
     alignItems: 'center',
     maxWidth: 1000,
@@ -19,17 +16,17 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function Project({ project }) {
+function Experience({ experience }) {
   const {
-    name, role, imageUrl, date, description, repoUrl,
-  } = project;
+    companyName, role, imageUrl, date, description,
+  } = experience;
   const classes = useStyles();
 
   return (
-    <Grid container item className={classes.projectContainer}>
+    <Grid container item className={classes.experienceContainer}>
       <Grid item>
         <Typography variant="h6">
-          {name}
+          {companyName}
         </Typography>
       </Grid>
       <Grid item>
@@ -52,37 +49,30 @@ function Project({ project }) {
               {description}
             </Typography>
           </Grid>
-          <Grid item>
-            <IconButton href={repoUrl}>
-              <GithubCircle />
-            </IconButton>
-          </Grid>
         </Grid>
       </Grid>
     </Grid>
   );
 }
 
-Project.propTypes = {
-  project: PropTypes.shape({
-    name: PropTypes.string,
+Experience.propTypes = {
+  experience: PropTypes.shape({
+    companyName: PropTypes.string,
     role: PropTypes.string,
     imageUrl: PropTypes.string,
     date: PropTypes.string,
     description: PropTypes.string,
-    repoUrl: PropTypes.string,
   }),
 };
 
-Project.defaultProps = {
-  project: {
-    name: '(Name of the project)',
-    role: '(My role in this project)',
+Experience.defaultProps = {
+  experience: {
+    companyName: '(Name of the company)',
+    role: '(My role at the company)',
     imageUrl: '(URL for the image)',
     date: '(Month Year - Month Year)',
     description: '(Description)',
-    repoUrl: '(Github repo)',
   },
 };
 
-export default Project;
+export default Experience;
