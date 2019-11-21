@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(() => ({
   experienceContainer: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles(() => ({
 
 function Experience({ experience }) {
   const {
-    companyName, role, imageUrl, date, description,
+    companyName, role, imageUrl, date, description, companyUrl,
   } = experience;
   const classes = useStyles();
 
@@ -49,6 +50,11 @@ function Experience({ experience }) {
               {description}
             </Typography>
           </Grid>
+          <Grid item>
+            <Button size="small" href={companyUrl}>
+              Company Site
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
@@ -62,6 +68,7 @@ Experience.propTypes = {
     imageUrl: PropTypes.string,
     date: PropTypes.string,
     description: PropTypes.string,
+    companyUrl: PropTypes.string,
   }),
 };
 
@@ -72,6 +79,7 @@ Experience.defaultProps = {
     imageUrl: '(URL for the image)',
     date: '(Month Year - Month Year)',
     description: '(Description)',
+    companyUrl: '(Company URL here)',
   },
 };
 
