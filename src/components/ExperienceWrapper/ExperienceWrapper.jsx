@@ -15,6 +15,7 @@ const EXPERIENCE = gql`
       imageUrl
       date
       description
+      companyUrl
     }
   }
 `;
