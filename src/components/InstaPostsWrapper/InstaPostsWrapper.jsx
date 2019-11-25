@@ -5,6 +5,7 @@ import { gql } from 'apollo-boost';
 import Grid from '@material-ui/core/Grid';
 
 import InstaPost from '../InstaPost/InstaPost';
+import LoadingInstaPosts from '../LoadingInstaPosts/LoadingInstaPosts';
 
 const INSTA_POSTS = gql`
   {
@@ -24,7 +25,7 @@ const INSTA_POSTS = gql`
 function InstaPostsWrapper() {
   const { loading, error, data } = useQuery(INSTA_POSTS);
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <LoadingInstaPosts />;
   if (error) return <p>Error</p>;
 
   return (
