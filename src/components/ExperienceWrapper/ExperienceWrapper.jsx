@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import Experience from '../Experience/Experience';
+import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences/LoadingProjectsOrExperiences';
 
 const EXPERIENCE = gql`
   {
@@ -23,7 +24,7 @@ const EXPERIENCE = gql`
 function ExperienceWrapper() {
   const { loading, error, data } = useQuery(EXPERIENCE);
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <LoadingProjectsOrExperiences />;
   if (error) return <p>Error</p>;
 
   return (

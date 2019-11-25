@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import Project from '../Project/Project';
-import LoadingProjects from '../LoadingProjects/LoadingProjects';
+import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences/LoadingProjectsOrExperiences';
 
 const PROJECTS = gql`
   {
@@ -24,7 +24,7 @@ const PROJECTS = gql`
 function ProjectsWrapper() {
   const { loading, error, data } = useQuery(PROJECTS);
 
-  if (loading) return <LoadingProjects />;
+  if (loading) return <LoadingProjectsOrExperiences />;
   if (error) return <p>Error</p>;
 
   return (

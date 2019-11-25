@@ -6,8 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-function LoadingProjects() {
-  const LoadingProject = () => (
+function LoadingProjectsOrExperiences() {
+  const LoadingData = () => (
     <Box display="flex" flexDirection="column" alignItems="center" mb={3}>
       <Skeleton variant="rect" height={30} width={150} style={{ marginBottom: 6 }} />
       <Skeleton variant="rect" height={20} width={70} style={{ marginBottom: 6 }} />
@@ -29,7 +29,7 @@ function LoadingProjects() {
 
   const projects = [];
   _.times(2, () => {
-    projects.push(<LoadingProject />);
+    projects.push(<LoadingData />);
   });
 
   return (
@@ -50,4 +50,4 @@ function LoadingProjects() {
   );
 }
 
-export default LoadingProjects;
+export default LoadingProjectsOrExperiences;
