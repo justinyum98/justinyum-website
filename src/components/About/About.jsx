@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Introduction from '../Introduction/Introduction';
 import ProjectsWrapper from '../ProjectsWrapper/ProjectsWrapper';
 import ExperienceWrapper from '../ExperienceWrapper/ExperienceWrapper';
+import Skills from '../Skills/Skills';
 
 export default function About() {
   return (
@@ -12,6 +13,7 @@ export default function About() {
       <Introduction />
       <ProjectsWrapper />
       <ExperienceWrapper />
+      <Skills />
     </Grid>
   );
 }

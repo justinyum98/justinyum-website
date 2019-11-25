@@ -33,11 +33,7 @@ function ProjectsWrapper() {
             Projects
         </Typography>
       </Grid>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-      >
+      <Grid container direction="column" alignItems="center">
         {data.projects.map((project) => (
           <Project project={project} />
         ))}
