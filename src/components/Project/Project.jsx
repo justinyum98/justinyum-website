@@ -17,6 +17,10 @@ const useStyles = makeStyles(() => ({
   descriptionContainer: {
     flexDirection: 'column',
   },
+  image: {
+    backgroundColor: 'white',
+    borderRadius: 30,
+  },
 }));
 
 function Project({ project }) {
@@ -39,7 +43,7 @@ function Project({ project }) {
       </Grid>
       <Grid container item>
         <Grid item xs={4}>
-          <img alt="loading..." src={imageUrl} />
+          <img alt="loading..." src={imageUrl} className={classes.image} />
         </Grid>
         <Grid container item xs={8} className={classes.descriptionContainer}>
           <Grid item>
