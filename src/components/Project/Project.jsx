@@ -17,10 +17,6 @@ const useStyles = makeStyles(() => ({
   descriptionContainer: {
     flexDirection: 'column',
   },
-  image: {
-    backgroundColor: 'white',
-    borderRadius: 30,
-  },
 }));
 
 function Project({ project }) {
