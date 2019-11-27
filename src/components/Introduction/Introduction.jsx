@@ -5,11 +5,13 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 
+import portrait from '../../assets/portrait.jpg';
+
 const useStyles = makeStyles({
   avatar: {
-    margin: 10,
-    width: 150,
-    height: 150,
+    margin: 20,
+    width: 250,
+    height: 250,
   },
 });
 
@@ -19,25 +21,25 @@ export default function Introduction() {
   return (
     <Grid container item xs={12} direction="column" alignItems="center">
       <Grid item xs={12}>
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           Hello, my name is
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Avatar className={classes.avatar}>JY</Avatar>
+        <Avatar src={portrait} className={classes.avatar}>JY</Avatar>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h2" gutterBottom>
           Justin Yum
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           I am a web developer based in San Diego, California.
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="body1" align="center" gutterBottom>
+        <Typography variant="h6" align="center" gutterBottom>
           My passion is expressing myself creatively
           <br />
           through coding and music production, which are

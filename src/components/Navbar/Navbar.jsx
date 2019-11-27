@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     padding: theme.spacing(1),
     flexShrink: 0,
-    color: 'black',
+    color: 'white',
     '&:hover': {
-      background: '#d8d8d8',
+      background: '#424242',
       borderRadius: 10,
     },
   },

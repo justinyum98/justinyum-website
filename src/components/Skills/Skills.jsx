@@ -17,38 +17,44 @@ function Skills() {
       </Grid>
       <Grid container item xs={6} justify="center">
         <Grid container item xs={4} direction="column" alignItems="center">
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h4" gutterBottom>
             Front-End
           </Typography>
-          <Grid container item direction="column" alignItems="center">
+          <Grid container item direction="column" alignItems="center" spacing={1}>
             {frontEndSkills.map((frontEndSkill) => (
-              <Typography variant="body1">
-                {frontEndSkill}
-              </Typography>
+              <Grid item>
+                <Typography variant="h6">
+                  {frontEndSkill}
+                </Typography>
+              </Grid>
             ))}
           </Grid>
         </Grid>
         <Grid container item xs={4} direction="column" alignItems="center">
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h4" gutterBottom>
             Back-End
           </Typography>
-          <Grid container item direction="column" alignItems="center">
+          <Grid container item direction="column" alignItems="center" spacing={1}>
             {backEndSkills.map((backEndSkill) => (
-              <Typography variant="body1">
-                {backEndSkill}
-              </Typography>
+              <Grid item>
+                <Typography variant="h6">
+                  {backEndSkill}
+                </Typography>
+              </Grid>
             ))}
           </Grid>
         </Grid>
         <Grid container item xs={4} direction="column" alignItems="center">
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h4" gutterBottom>
             Other
           </Typography>
-          <Grid container item direction="column" alignItems="center">
+          <Grid container item direction="column" alignItems="center" alignContent="center" spacing={1}>
             {otherSkills.map((otherSkill) => (
-              <Typography variant="body1">
-                {otherSkill}
-              </Typography>
+              <Grid item>
+                <Typography variant="h6">
+                  {otherSkill}
+                </Typography>
+              </Grid>
             ))}
           </Grid>
         </Grid>

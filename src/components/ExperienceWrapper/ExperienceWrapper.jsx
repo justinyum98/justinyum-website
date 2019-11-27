@@ -34,11 +34,7 @@ function ExperienceWrapper() {
           Experience
         </Typography>
       </Grid>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-      >
+      <Grid container direction="column" alignItems="center" spacing={6}>
         {data.experience.map((experience) => (
           <Experience experience={experience} />
         ))}
