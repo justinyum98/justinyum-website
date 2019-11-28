@@ -24,7 +24,7 @@ const PROJECTS = gql`
 function ProjectsWrapper() {
   const { loading, error, data } = useQuery(PROJECTS);
 
-  if (loading) return <LoadingProjectsOrExperiences />;
+  if (loading) return <LoadingProjectsOrExperiences sectionType="Project" />;
   if (error) return <p>Error</p>;
 
   return (

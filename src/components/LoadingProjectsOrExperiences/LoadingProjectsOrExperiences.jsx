@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 import Box from '@material-ui/core/Box';
@@ -6,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-function LoadingProjectsOrExperiences() {
+function LoadingProjectsOrExperiences({ sectionType }) {
   const LoadingData = () => (
     <Box display="flex" flexDirection="column" alignItems="center" mb={3}>
       <Skeleton variant="rect" height={30} width={150} style={{ marginBottom: 6 }} />
@@ -36,7 +37,7 @@ function LoadingProjectsOrExperiences() {
     <Grid container item xs={12} direction="column" alignItems="center">
       <Grid item xs={12}>
         <Typography variant="h3" gutterBottom>
-            Projects
+          {sectionType}
         </Typography>
       </Grid>
       <Grid container direction="column" alignItems="center">
@@ -49,5 +50,13 @@ function LoadingProjectsOrExperiences() {
     </Grid>
   );
 }
+
+LoadingProjectsOrExperiences.propTypes = {
+  sectionType: PropTypes.string,
+};
+
+LoadingProjectsOrExperiences.defaultProps = {
+  sectionType: '',
+};
 
 export default LoadingProjectsOrExperiences;

@@ -24,7 +24,7 @@ const EXPERIENCE = gql`
 function ExperienceWrapper() {
   const { loading, error, data } = useQuery(EXPERIENCE);
 
-  if (loading) return <LoadingProjectsOrExperiences />;
+  if (loading) return <LoadingProjectsOrExperiences sectionType="Experience" />;
   if (error) return <p>Error</p>;
 
   return (
