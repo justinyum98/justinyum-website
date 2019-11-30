@@ -1,26 +1,11 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
 
 import Grid from '@material-ui/core/Grid';
 
 import InstaPost from '../InstaPost/InstaPost';
 import LoadingInstaPosts from '../LoadingInstaPosts/LoadingInstaPosts';
-
-const INSTA_POSTS = gql`
-  {
-    posts {
-      id
-      username
-      mediaType
-      mediaUrl
-      likeCount
-      caption
-      commentsCount
-      permalink
-    }
-  }
-`;
+import { INSTA_POSTS } from '../../graphql/queries';
 
 function InstaPostsWrapper() {
   const { loading, error, data } = useQuery(INSTA_POSTS);

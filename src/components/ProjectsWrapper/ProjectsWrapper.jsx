@@ -1,25 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import Project from '../Project/Project';
 import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences/LoadingProjectsOrExperiences';
-
-const PROJECTS = gql`
-  {
-    projects {
-      name
-      role
-      imageUrl
-      date
-      description
-      repoUrl
-    }
-  }
-`;
+import { PROJECTS } from '../../graphql/queries';
 
 function ProjectsWrapper() {
   const { loading, error, data } = useQuery(PROJECTS);

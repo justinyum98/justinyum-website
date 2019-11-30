@@ -1,25 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import Experience from '../Experience/Experience';
 import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences/LoadingProjectsOrExperiences';
-
-const EXPERIENCE = gql`
-  {
-    experience {
-      companyName
-      role
-      imageUrl
-      date
-      description
-      companyUrl
-    }
-  }
-`;
+import { EXPERIENCE } from '../../graphql/queries';
 
 function ExperienceWrapper() {
   const { loading, error, data } = useQuery(EXPERIENCE);

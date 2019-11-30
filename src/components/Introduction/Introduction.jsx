@@ -26,7 +26,7 @@ export default function Introduction() {
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Avatar src={portrait} className={classes.avatar}>JY</Avatar>
+        <Avatar src={portrait} className={classes.avatar} />
       </Grid>
       <Grid item xs={12}>
         <Typography variant="h2" gutterBottom>
