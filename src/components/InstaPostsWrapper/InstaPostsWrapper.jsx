@@ -14,13 +14,7 @@ function InstaPostsWrapper() {
   if (error) return <p>Error</p>;
 
   return (
-    <Grid
-      container
-      direction="row"
-      justify="center"
-      alignItems="baseline"
-      spacing={2}
-    >
+    <Grid container direction="row" justify="center" alignItems="baseline" spacing={2}>
       {data.posts.map((post) => (
         <Grid item xs={12} sm={12} md={6}>
           <InstaPost key={post.id} post={post} />

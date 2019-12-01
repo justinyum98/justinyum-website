@@ -31,6 +31,7 @@ const INSTA_POSTS = gql`
     posts {
       id
       username
+      profilePictureUrl
       mediaType
       mediaUrl
       likeCount
