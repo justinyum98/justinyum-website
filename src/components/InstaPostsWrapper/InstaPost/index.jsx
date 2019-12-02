@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import Card from '@material-ui/core/Card';
 
-import InstaPostHeader from '../InstaPostHeader/InstaPostHeader';
-import InstaPostMedia from '../InstaPostMedia/InstaPostMedia';
-import InstaPostContent from '../InstaPostContent/InstaPostContent';
-import InstaPostActions from '../InstaPostActions/InstaPostActions';
+import InstaPostHeader from './InstaPostHeader';
+import InstaPostMedia from './InstaPostMedia';
+import InstaPostContent from './InstaPostContent';
+import InstaPostActions from './InstaPostActions';
 
 function InstaPost({ post }) {
   const {

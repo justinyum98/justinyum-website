@@ -3,8 +3,8 @@ import { useQuery } from '@apollo/react-hooks';
 
 import Grid from '@material-ui/core/Grid';
 
-import InstaPost from '../InstaPost/InstaPost';
-import LoadingInstaPosts from '../LoadingInstaPosts/LoadingInstaPosts';
+import InstaPost from './InstaPost';
+import LoadingInstaPosts from './LoadingInstaPosts';
 import { INSTA_POSTS } from '../../graphql/queries';
 
 function InstaPostsWrapper() {

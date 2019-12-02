@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/react-hooks';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import Project from '../Project/Project';
-import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences/LoadingProjectsOrExperiences';
+import Project from './Project';
+import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences';
 import { PROJECTS } from '../../graphql/queries';
 
 function ProjectsWrapper() {

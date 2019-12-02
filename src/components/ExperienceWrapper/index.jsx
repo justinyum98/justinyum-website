@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/react-hooks';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-import Experience from '../Experience/Experience';
-import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences/LoadingProjectsOrExperiences';
+import Experience from './Experience';
+import LoadingProjectsOrExperiences from '../LoadingProjectsOrExperiences';
 import { EXPERIENCE } from '../../graphql/queries';
 
 function ExperienceWrapper() {

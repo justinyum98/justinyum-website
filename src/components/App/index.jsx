@@ -5,12 +5,12 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Layout from '../Layout/Layout';
-import Navbar from '../Navbar/Navbar';
-import Home from '../Home/Home';
-import About from '../About/About';
-import Music from '../Music/Music';
-import Posts from '../Posts/Posts';
+import Layout from '../Layout';
+import Navbar from '../Navbar';
+import Home from '../Home';
+import About from '../About';
+import Music from '../Music';
+import Posts from '../Posts';
 
 function App() {
   return (

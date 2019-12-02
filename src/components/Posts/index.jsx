@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InstaPostsWrapper from '../InstaPostsWrapper/InstaPostsWrapper';
+import InstaPostsWrapper from '../InstaPostsWrapper';
 
 export default function Posts() {
   return (
