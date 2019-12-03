@@ -10,7 +10,7 @@ export default {
   title: 'InstaPost',
 };
 
-const buildPost = () => (
+const buildImagePost = () => (
   {
     id: faker.random.number(),
     username: faker.internet.userName(),
@@ -24,16 +24,36 @@ const buildPost = () => (
   }
 );
 
-const post = buildPost();
+const buildVideoPost = () => (
+  {
+    id: faker.random.number(),
+    username: faker.internet.userName(),
+    profilePictureUrl: faker.image.avatar(),
+    mediaType: 'VIDEO',
+    mediaUrl: 'https://scontent.xx.fbcdn.net/v/t50.2886-16/66059885_386349038663015_534133694150849667_n.mp4?_nc_cat=105&_nc_ohc=0jovMPfMjtUAQmb2pYZusVg-UBQAJ9wonfIqHZtoblYm2XZ-FAanrJLLA&_nc_ht=scontent.xx&oh=d29a30014cbac5092508484e1453c391&oe=5E7ED561',
+    likeCount: faker.random.number(),
+    caption: faker.lorem.sentences(),
+    commentsCount: faker.random.number(),
+    permalink: faker.internet.url(),
+  }
+);
 
-export const defaultRendering = () => (
-  <InstaPost post={post} />
+const imagePost = buildImagePost();
+const videoPost = buildVideoPost();
+
+
+export const defaultImageRendering = () => (
+  <InstaPost post={imagePost} />
+);
+
+export const defaultVideoRendering = () => (
+  <InstaPost post={videoPost} />
 );
 
 export const headerRendering = () => (
   <InstaPostHeader
-    username={post.username}
-    profilePictureUrl={post.profilePictureUrl}
+    username={imagePost.username}
+    profilePictureUrl={imagePost.profilePictureUrl}
   />
 );
 
@@ -41,23 +61,34 @@ export const noPropsHeaderRendering = () => (
   <InstaPostHeader />
 );
 
-export const mediaRendering = () => (
+export const mediaPhotoRendering = () => (
   <InstaPostMedia
-    mediaType={post.mediaType}
-    mediaUrl={post.mediaUrl}
+    mediaType={imagePost.mediaType}
+    mediaUrl={imagePost.mediaUrl}
   />
+);
+
+export const mediaVideoRendering = () => (
+  <InstaPostMedia
+    mediaType={videoPost.mediaType}
+    mediaUrl={videoPost.mediaUrl}
+  />
+);
+
+export const noPropsMediaRendering = () => (
+  <InstaPostMedia />
 );
 
 export const contentRendering = () => (
   <InstaPostContent
-    likeCount={post.likeCount}
-    commentsCount={post.commentsCount}
-    caption={post.caption}
+    likeCount={imagePost.likeCount}
+    commentsCount={imagePost.commentsCount}
+    caption={imagePost.caption}
   />
 );
 
 export const actionsRendering = () => (
   <InstaPostActions
-    permalink={post.permalink}
+    permalink={imagePost.permalink}
   />
 );

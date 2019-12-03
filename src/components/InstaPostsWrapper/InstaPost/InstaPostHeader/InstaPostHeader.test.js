@@ -8,7 +8,7 @@ import InstaPostHeader from '.';
 describe('InstaPostHeader', () => {
   let shallow;
 
-  beforeAll(() => {
+  beforeEach(() => {
     shallow = createShallow();
   });
 

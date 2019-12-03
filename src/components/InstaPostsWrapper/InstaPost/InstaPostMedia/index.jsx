@@ -9,13 +9,13 @@ const InstaPostMedia = ({ mediaType, mediaUrl }) => (
     { mediaType === 'IMAGE' ? (
       <CardMedia
         component="img"
-        alt="Loading..."
-        image={mediaUrl}
+        alt="Error in loading image."
+        src={mediaUrl}
       />
     ) : (
-      <video controls>
+      <CardMedia component="video" controls>
         <source src={mediaUrl} type="video/mp4" />
-      </video>
+      </CardMedia>
     )}
   </>
 );
@@ -27,7 +27,7 @@ InstaPostMedia.propTypes = {
 
 InstaPostMedia.defaultProps = {
   mediaType: 'IMAGE',
-  mediaUrl: '',
+  mediaUrl: undefined,
 };
 
 export default InstaPostMedia;
