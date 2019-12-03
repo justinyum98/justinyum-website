@@ -1,10 +1,10 @@
 import React from 'react';
 import * as faker from 'faker';
-import InstaPost from '../src/components/InstaPost/InstaPost';
-import InstaPostHeader from '../src/components/InstaPostHeader/InstaPostHeader';
-import InstaPostMedia from '../src/components/InstaPostMedia/InstaPostMedia';
-import InstaPostContent from '../src/components/InstaPostContent/InstaPostContent';
-import InstaPostActions from '../src/components/InstaPostActions/InstaPostActions';
+import InstaPost from '../src/components/InstaPostsWrapper/InstaPost';
+import InstaPostHeader from '../src/components/InstaPostsWrapper/InstaPost/InstaPostHeader';
+import InstaPostMedia from '../src/components/InstaPostsWrapper/InstaPost/InstaPostMedia';
+import InstaPostContent from '../src/components/InstaPostsWrapper/InstaPost/InstaPostContent';
+import InstaPostActions from '../src/components/InstaPostsWrapper/InstaPost/InstaPostActions';
 
 export default {
   title: 'InstaPost',
@@ -35,6 +35,10 @@ export const headerRendering = () => (
     username={post.username}
     profilePictureUrl={post.profilePictureUrl}
   />
+);
+
+export const noPropsHeaderRendering = () => (
+  <InstaPostHeader />
 );
 
 export const mediaRendering = () => (

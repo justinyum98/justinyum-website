@@ -7,7 +7,7 @@ import Avatar from '@material-ui/core/Avatar';
 const InstaPostHeader = ({ username, profilePictureUrl }) => (
   <CardHeader
     avatar={
-      <Avatar src={profilePictureUrl} />
+      <Avatar src={profilePictureUrl}>JY</Avatar>
     }
     title={username}
   />
@@ -19,8 +19,8 @@ InstaPostHeader.propTypes = {
 };
 
 InstaPostHeader.defaultProps = {
-  username: '(username here)',
-  profilePictureUrl: '',
+  username: undefined,
+  profilePictureUrl: undefined,
 };
 
 export default InstaPostHeader;
