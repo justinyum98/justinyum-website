@@ -1,47 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-
-import { GithubCircle } from 'mdi-material-ui';
-
-const useStyles = makeStyles(() => ({
-  projectContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    maxWidth: 1000,
-  },
-  descriptionContainer: {
-    flexDirection: 'column',
-  },
-}));
+import Button from '@material-ui/core/Button';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 function Project({ project }) {
   const {
     name, role, imageUrl, date, description, repoUrl,
   } = project;
-  const classes = useStyles();
 
   return (
-    <Grid container item className={classes.projectContainer}>
-      <Grid item>
-        <Typography variant="h6">
-          {name}
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Typography variant="subtitle2">
-          {role}
-        </Typography>
-      </Grid>
-      <Grid container item>
-        <Grid item xs={4}>
-          <img alt="loading..." src={imageUrl} className={classes.image} />
+    <Grid container item direction="column" alignItems="center" spacing={3}>
+      <Grid container item direction="column" alignItems="center">
+        <Grid item>
+          <Typography variant="h6">
+            {name}
+          </Typography>
         </Grid>
-        <Grid container item xs={8} className={classes.descriptionContainer}>
+        <Grid item>
+          <Typography variant="subtitle2">
+            {role}
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid container item direction="row" justify="center" spacing={2}>
+        <Grid container item xs={12} sm={12} md={5} justify="center" alignItems="flex-start">
+          <img alt="loading..." src={imageUrl} />
+        </Grid>
+        <Grid container item xs={10} sm={10} md={6} direction="column" alignItems="center" spacing={2}>
           <Grid item>
             <Typography variant="subtitle1">
               {date}
@@ -53,9 +41,14 @@ function Project({ project }) {
             </Typography>
           </Grid>
           <Grid item>
-            <IconButton href={repoUrl}>
-              <GithubCircle />
-            </IconButton>
+            <Button
+              variant="contained"
+              size="large"
+              startIcon={<GitHubIcon />}
+              href={repoUrl}
+            >
+              Github Repo
+            </Button>
           </Grid>
         </Grid>
       </Grid>
@@ -76,12 +69,12 @@ Project.propTypes = {
 
 Project.defaultProps = {
   project: {
-    name: '(Name of the project)',
-    role: '(My role in this project)',
-    imageUrl: '(URL for the image)',
-    date: '(Month Year - Month Year)',
-    description: '(Description)',
-    repoUrl: '(Github repo)',
+    name: undefined,
+    role: undefined,
+    imageUrl: undefined,
+    date: undefined,
+    description: undefined,
+    repoUrl: undefined,
   },
 };
 

@@ -34,16 +34,16 @@ export default function Introduction() {
         </Typography>
       </Grid>
       <Grid item xs={12}>
-        <Typography variant="h6" gutterBottom>
-          I am a web developer based in San Diego, California.
+        <Typography variant="h6" align="center" gutterBottom>
+          I am a web developer based in
+          <br />
+          San Diego, California.
         </Typography>
       </Grid>
       <Grid item xs={12}>
         <Typography variant="h6" align="center" gutterBottom>
           My passion is expressing myself creatively
-          <br />
           through coding and music production, which are
-          <br />
           two enjoyable pastimes of mine.
         </Typography>
       </Grid>

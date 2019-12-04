@@ -1,45 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
-const useStyles = makeStyles(() => ({
-  experienceContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    maxWidth: 1000,
-  },
-  descriptionContainer: {
-    flexDirection: 'column',
-  },
-}));
+import WebIcon from '@material-ui/icons/Web';
 
 function Experience({ experience }) {
   const {
     companyName, role, imageUrl, date, description, companyUrl,
   } = experience;
-  const classes = useStyles();
 
   return (
-    <Grid container item className={classes.experienceContainer}>
-      <Grid item>
-        <Typography variant="h6">
-          {companyName}
-        </Typography>
+    <Grid container item direction="column" alignItems="center" spacing={3}>
+      <Grid container item direction="column" alignItems="center">
+        <Grid item>
+          <Typography variant="h6">
+            {companyName}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography variant="subtitle2">
+            {role}
+          </Typography>
+        </Grid>
       </Grid>
-      <Grid item>
-        <Typography variant="subtitle2">
-          {role}
-        </Typography>
-      </Grid>
-      <Grid container item>
-        <Grid item xs={4}>
+      <Grid container item direction="row" justify="center" spacing={2}>
+        <Grid container item xs={12} sm={12} md={5} justify="center" alignItems="flex-start">
           <img alt="loading..." src={imageUrl} />
         </Grid>
-        <Grid container item xs={8} className={classes.descriptionContainer}>
+        <Grid container item xs={10} sm={10} md={6} direction="column" alignItems="center" spacing={2}>
           <Grid item>
             <Typography variant="subtitle1">
               {date}
@@ -51,7 +41,12 @@ function Experience({ experience }) {
             </Typography>
           </Grid>
           <Grid item>
-            <Button size="small" href={companyUrl}>
+            <Button
+              variant="contained"
+              size="large"
+              startIcon={<WebIcon />}
+              href={companyUrl}
+            >
               Company Site
             </Button>
           </Grid>
@@ -74,12 +69,12 @@ Experience.propTypes = {
 
 Experience.defaultProps = {
   experience: {
-    companyName: '(Name of the company)',
-    role: '(My role at the company)',
-    imageUrl: '(URL for the image)',
-    date: '(Month Year - Month Year)',
-    description: '(Description)',
-    companyUrl: '(Company URL here)',
+    companyName: undefined,
+    role: undefined,
+    imageUrl: undefined,
+    date: undefined,
+    description: undefined,
+    companyUrl: undefined,
   },
 };
 
