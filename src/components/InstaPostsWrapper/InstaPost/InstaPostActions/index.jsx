@@ -3,13 +3,17 @@ import PropTypes from 'prop-types';
 
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import { Instagram } from 'mdi-material-ui';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 
 const InstaPostActions = ({ permalink }) => (
   <CardActions>
-    <Button size="small" href={permalink}>
-      <Instagram />
+    <Button
+      variant="contained"
+      startIcon={<InstagramIcon />}
+      href={permalink}
+    >
+      Original Post
     </Button>
   </CardActions>
 );
@@ -19,7 +23,7 @@ InstaPostActions.propTypes = {
 };
 
 InstaPostActions.defaultProps = {
-  permalink: '',
+  permalink: undefined,
 };
 
 export default InstaPostActions;
