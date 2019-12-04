@@ -15,7 +15,7 @@ const InstaPostContent = ({ likeCount, commentsCount, caption }) => (
       { commentsCount }
     </Typography>
     <Typography variant="body1">
-      {caption}
+      { caption }
     </Typography>
   </CardContent>
 );
@@ -27,9 +27,9 @@ InstaPostContent.propTypes = {
 };
 
 InstaPostContent.defaultProps = {
-  likeCount: 0,
-  commentsCount: 0,
-  caption: '',
+  likeCount: undefined,
+  commentsCount: undefined,
+  caption: undefined,
 };
 
 export default InstaPostContent;
