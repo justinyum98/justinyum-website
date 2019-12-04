@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { FavoriteOutlined } from '@material-ui/icons';
-import { CommentMultipleOutline } from 'mdi-material-ui';
 
 const InstaPostContent = ({ likeCount, commentsCount, caption }) => (
   <CardContent>
-    <Typography variant="h6" gutterBottom>
-      <FavoriteOutlined />
-      { likeCount }
-      <CommentMultipleOutline />
-      { commentsCount }
+    <Typography variant="subtitle1" gutterBottom>
+      {likeCount}
+      {' '}
+      likes,
+      {' '}
+      {commentsCount}
+      {' '}
+      comments
     </Typography>
     <Typography variant="body1">
       { caption }

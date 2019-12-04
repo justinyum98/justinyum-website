@@ -40,8 +40,8 @@ describe('InstaPostContent', () => {
     });
 
     it('should render likeCount and commentsCount', () => {
-      const actualLikeCount = _.toInteger(wrapper.childAt(0).childAt(1).text());
-      const actualCommentsCount = _.toInteger(wrapper.childAt(0).childAt(3).text());
+      const actualLikeCount = _.toInteger(wrapper.childAt(0).childAt(0).text());
+      const actualCommentsCount = _.toInteger(wrapper.childAt(0).childAt(4).text());
 
       expect(actualLikeCount).toEqual(mockLikeCount);
       expect(actualCommentsCount).toEqual(mockCommentsCount);
@@ -65,7 +65,7 @@ describe('InstaPostContent', () => {
       const reactionsChildren = wrapper.childAt(0).children().length;
       const captionChildren = wrapper.childAt(1).children().length;
 
-      expect(reactionsChildren).toEqual(2);
+      expect(reactionsChildren).toEqual(5);
       expect(captionChildren).toEqual(0);
     });
   });
