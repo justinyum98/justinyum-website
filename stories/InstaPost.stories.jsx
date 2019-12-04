@@ -87,6 +87,10 @@ export const contentRendering = () => (
   />
 );
 
+export const noPropsContentRendering = () => (
+  <InstaPostContent />
+);
+
 export const actionsRendering = () => (
   <InstaPostActions
     permalink={imagePost.permalink}
