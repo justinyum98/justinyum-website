@@ -4,9 +4,11 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
 
 import Layout from '../Layout';
 import Navbar from '../Navbar';
+import MobileNavbar from '../MobileNavbar';
 import Home from '../Home';
 import About from '../About';
 import Music from '../Music';
@@ -17,7 +19,12 @@ function App() {
   return (
     <Router>
       <Layout>
-        <Navbar />
+        <Box display={{ xs: 'none', sm: 'none', md: 'block' }}>
+          <Navbar />
+        </Box>
+        <Box display={{ xs: 'block', sm: 'block', md: 'none' }}>
+          <MobileNavbar />
+        </Box>
         <Switch>
           <Route exact path="/">
             <Home />
