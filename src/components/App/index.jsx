@@ -11,6 +11,7 @@ import Home from '../Home';
 import About from '../About';
 import Music from '../Music';
 import Posts from '../Posts';
+import Contact from '../Contact';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
             <Posts />
           </Route>
           <Route path="/contact">
-            Contact component here
+            <Contact />
           </Route>
         </Switch>
       </Layout>
