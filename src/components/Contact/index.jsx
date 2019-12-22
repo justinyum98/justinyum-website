@@ -33,7 +33,7 @@ export default function Contact() {
   return (
     <div>
       <Box display="flex" flexDirection="column" alignItems="center">
-        <Box>
+        <Box mt={5}>
           <Typography variant="h2">
             Contact Me
           </Typography>
